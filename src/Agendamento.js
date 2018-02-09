@@ -1,9 +1,9 @@
 function Agendamento() {
   var clazz = {
     para : function(consulta) {
-      var novaData = new Date(2018, 1, 21);
-      var novaConsulta = new Consulta(consulta.geNome(), consulta.getProcedimentos(), consulta.isParticular(), consulta.isRetorno(), novaData);
-
+      var vinteDiasEmMillisegundos = 1000 * 60 * 60 * 24 * 20;
+      var novaData = new Date(consulta.getData().getTime() + vinteDiasEmMillisegundos);
+      var novaConsulta = new Consulta(consulta.getNome(), consulta.getProcedimentos(), consulta.isParticular(), consulta.isRetorno(), novaData);
       return novaConsulta;
     }
   };
